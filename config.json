@@ -1,0 +1,17 @@
+{
+  "name": "Krono's 2",
+  "version": "1.0.0",
+  "build": 1,
+  "id": "com.example.kronos2",
+  "fullscreen": true,
+  "orientation": "portrait",
+  "plugins": [],
+  "credentials": {
+    "android": {
+      "release": {
+        "name": "",
+        "secret": ""
+      }
+    }
+  }
+}

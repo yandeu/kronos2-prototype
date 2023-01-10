@@ -1,0 +1,28 @@
+{
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack serve --config webpack/webpack.dev.mjs",
+    "build": "./build.sh",
+    "__": "__",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint --fix src --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@yandeu/tap": "^0.1.2",
+    "enable3d": "^0.25.3"
+  },
+  "devDependencies": {
+    "@yandeu/eslint-config": "^0.0.3",
+    "@yandeu/prettier-config": "^0.0.3",
+    "html-webpack-plugin": "^5.5.0",
+    "source-map-loader": "^4.0.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-obfuscator": "^3.5.1"
+  }
+}
