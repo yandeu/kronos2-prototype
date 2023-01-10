@@ -8,7 +8,7 @@ on:
       - main
 
 permissions:
-  pages: write
+  contents: write
 
 jobs:
   build:
