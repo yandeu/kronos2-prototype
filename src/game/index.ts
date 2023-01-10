@@ -41,9 +41,7 @@ export class GameScene extends Scene3D implements IGameScene {
 
     // create level
     this.level = new Level(this, this.currentLevel)
-    const start = this.level.start
-    const startZ = start[0]
-    const startX = start[1]
+    const { z: startZ, x: startX } = this.level.start
 
     // keep track of the center
     this.center.set(startX * 1.1, 0, startZ * 1.1)

@@ -12,7 +12,7 @@ const loadLevel = (index: number) => {
 }
 
 export class Level {
-  private _start: Array<number>
+  private _start: Vec2
   private _level: IL
   public platforms: ExtendedObject3D[] = []
 
@@ -20,11 +20,11 @@ export class Level {
     this._level = loadLevel(level)
 
     const start = this.findPlatformByType('S')
-    if (!start) throw new Error('No start position "S" found!')
+    if (start.length !== 0) if (start.length !== 1) throw new Error('There has to be ONE start "S"!')
 
     this.platforms.push(...this.addPlatforms())
 
-    this._start = start
+    this._start = start[0]
   }
 
   isSpecificPlatform = (z: number, x: number, p: StoneType): boolean => {
@@ -54,12 +54,13 @@ export class Level {
     return null
   }
 
-  findPlatformByType(type: StoneType): Array<number> | null {
-    let found: Array<number> | null = null
+  findPlatformByType(type: StoneType): Array<Vec2> {
+    const found: Array<Vec2> = []
 
     this.iterateLevel((z, x) => {
-      if (this.stones[z][x] === type) found = [z, x]
+      if (this.stones[z][x] === type) found.push({ z, x })
     })
+
     return found
   }
 
